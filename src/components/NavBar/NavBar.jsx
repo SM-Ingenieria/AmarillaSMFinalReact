@@ -6,7 +6,9 @@
 
 // import Button from 'react-bootstrap/Button';
 // import { Button } from 'reactstrap';
+// import 'NavBar/NavBar.css';
 import image from '../../assets/react.svg'
+import foto from '../../assets/remera1.svg'
 import React, { useState } from 'react';
 import {
   Collapse,
@@ -15,7 +17,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+ 
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -24,50 +26,50 @@ import {
 } from 'reactstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './NavBar.css'
 
 import CartWidget from "../CartWidget/CartWidget"
-export const Menu = () => {
+import { Link, NavLink, useParams } from 'react-router-dom';
+// 
+export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+  
   return (
-    <div>
-      <Nav
-      >
-        <NavItem>
-          <NavLink
-            active
-            href="#"
-          >
-            <img src={image} alt="imagen"/>
-            Bienvenidos
-            
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#">
-            Repuestos
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            active
-            href="#"
-          >
-            Reparaciones
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            active
-            href="#"
-          >
-            
-            <CartWidget />
-            
-          </NavLink>
-        </NavItem>
-      </Nav>
+    <div className="border border-5 border-primary m-3">
+      <Navbar>
+
+        <Nav>
+
+          <Link className="BotonSm" to='/'>
+            SM Ingenieria
+          </Link>
+
+          <NavItem>
+            <NavLink to="/">
+              Inicio
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/categoria/repuestos"className={({isActive})=>isActive ? 'btn btn-primary': 'btn btn-outline-primary'}>
+              Repuestos
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/categoria/servicios" className={({isActive})=>isActive ? 'btn btn-primary': 'btn btn-outline-primary'}>
+              Servicios
+            </NavLink>
+          </NavItem>
+        
+        </Nav>
+        <Link className="linkCarrito" to='/cart'>
+          {/* llamada al CartWidget   */}
+          <CartWidget />
+
+
+        </Link>
+      </Navbar>
     </div>
 
   )

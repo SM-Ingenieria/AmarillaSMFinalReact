@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'reactstrap';
 import App from './App'
-import './index.css'
+//import './index.css'
 
 
 
