@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { mFetch } from "../utils/mFetch";
 import { Link, useParams } from "react-router-dom";
 
-import Item from "../Item/Item";
+
 import ItemList from "../ItemList/ItemList";
 
 
