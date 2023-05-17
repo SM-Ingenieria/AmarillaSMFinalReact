@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import { Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
 // import { CartContainer } from './components/CartContainer/CartContainer'
 
 export const ItemDetail = () => {
@@ -20,8 +21,8 @@ export const ItemDetail = () => {
         <ItemCount onAdd={onAdd}/>
         :
         <>
-        <Link to={'/' } className="btn btn-outline-danger">Terminar compra</Link>
-        <Link to={'/'}className="btn btn-outline-sucess">Seguir comprando</Link>
+        <Link to={'/cart' } className="btn btn-outline-danger">Terminar compra</Link>
+        <Link to={'/'} className="btn btn-outline-success">Seguir comprando</Link>
         {/* <Button to={'/'} className="btn btn-outline-danger">Terminar compra</Button>
         <Button to={'/'}className="btn btn-outline-danger">Seguir comprando</Button> */}
         </>

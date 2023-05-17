@@ -1,9 +1,9 @@
-
-
 import { useEffect, useState } from "react";
 import { mFetch } from "../utils/mFetch";
 import { Link, useParams } from "react-router-dom";
 
+import Item from "../Item/Item";
+import ItemList from "../ItemList/ItemList";
 
 
 
@@ -59,26 +59,28 @@ const ItemListContainer = ({ greeting, children }) => {
   }}>
     
       
-        {children}
+        {/* {children} */}
         {isLoading ?
           //valida cuando esta trayendo los datos 
           <h2>Cargando...</h2>
           :
           //cuando va a finally en punto * y cambia a false
-          productos.map(({id, foto,name, precio, categoria}) => <div key={id} className="card w-25">
-                                             <img src={foto} className="card-img-top " alt="image-card" />
-                                             <div className="card-body">
-                                                <h6>Nombre: {name}</h6>
-                                                <label>Precio: {precio}</label>
-                                                <label>Categoria: {categoria}</label>
-                                              </div>  
-                                                <div className="card-footer">
-                                                    <Link to={`/detail/${id}`}>
-                                                    <button className="btn btn-outline-dark">Detalle</button>
-                                                    </Link>
-                                                </div>
+          // en item ahora abajo:
+         <ItemList productos={productos}/>
+          // productos.map(({id, foto,name, precio, categoria}) => <div key={id} className="card w-25">
+          //                                    <img src={foto} className="card-img-top " alt="image-card" />
+          //                                    <div className="card-body">
+          //                                       <h6>Nombre: {name}</h6>
+          //                                       <label>Precio: {precio}</label>
+          //                                       <label>Categoria: {categoria}</label>
+          //                                     </div>  
+          //                                       <div className="card-footer">
+          //                                           <Link to={`/detail/${id}`}>
+          //                                           <button className="btn btn-outline-dark">Detalle</button>
+          //                                           </Link>
+          //                                       </div>
                                              
-                                        </div>)
+          //                               </div>)
 
         }
 
