@@ -11,10 +11,13 @@ let productos = [
    
   ]
   
-  export const mFetch =() => {
+  //si utilizo mfetch -> en ItemListContainer  undefine  ---- si uso mFetch ItemDetailContainer si va a venir un id valor
+
+  export const mFetch =(id) => {
     return new Promise ((res,rej)=>{
       setTimeout(()=>{
-        res(productos)
+        res(!id ? productos : productos.find(productos => productos.id === id)) //traemos el id de la url
       },500)
     })
   }
+
