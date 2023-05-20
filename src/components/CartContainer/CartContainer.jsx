@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCartContext } from '../../Context/CarContext'
 
-export const CartContainer = () => {
+export const CartContainer = (children) => {
 
   const { cartList, vaciarCarrito } = useCartContext()
 
@@ -10,7 +10,7 @@ export const CartContainer = () => {
     <div>
 
       {cartList.map(prod => (
-        <div>
+        <div key={prod.id}>
 
           <img className="w-25" src={prod.foto} alt="imagen" />
           <label>Cantidad: {prod.cantidad} -</label>

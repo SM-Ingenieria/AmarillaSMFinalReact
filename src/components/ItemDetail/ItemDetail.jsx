@@ -9,6 +9,8 @@ import { useCartContext } from '../../Context/CarContext'
 // import { CartContainer } from './components/CartContainer/CartContainer'
 
 export const ItemDetail = ({ producto }) => {
+
+  const [tieneCantidad, actualizarTieneCantidad]= useState(false)
   
   const [isCant, setIsCant] = useState(false)
   
@@ -37,14 +39,26 @@ export const ItemDetail = ({ producto }) => {
         </div>
         <div className="col">
           {
-            !isCant ?
-              <ItemCount onAdd={onAdd} />
-              :
-              <>
-                <Link to={'/cart'} className="btn btn-outline-danger">Terminar compra</Link>
-                <Link to={'/'} className="btn btn-outline-success">Seguir comprando</Link>
+            isCant ?
+             <> 
+              <Link className='btn btn-success' to = '/cart'>Terminar Compra </Link>
+              <Link to={'/'} className="btn btn-outline-success">Seguir comprando</Link>
 
-              </>
+            </>
+              :
+            <>
+              <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+            </>
+            
+            
+            //  //  !isCant ?
+            //   <ItemCount onAdd={onAdd} />
+            //   :
+            //   <>
+            //     <Link to={'/cart'} className="btn btn-outline-danger">Terminar compra</Link>
+            //     <Link to={'/'} className="btn btn-outline-success">Seguir comprando</Link>
+
+            //   </>
           }
 
         </div>
