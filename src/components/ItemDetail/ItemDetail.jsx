@@ -28,7 +28,8 @@ export const ItemDetail = ({ producto }) => {
 
   return (
     <>
-      <div className="border border-5 border-primary m-3">Item Detail</div>
+      {/* <div className="border border-5 border-primary m-3">Item Detail</div> */}
+      <div>Item Detail</div>
       <div className="row">
         <div className="col">
           <img src={producto.foto} alt="imagen" />

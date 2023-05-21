@@ -14,7 +14,11 @@ const ItemCount = ({initial=1, stock=5, onAdd}) => {
         onAdd()
     }
     return (
-        <div className="border border-5 border-primary m-3">
+        <div 
+        
+        // className="border border-5 border-primary m-3"
+        
+        >
    
             {/* con camelCase defino un evento */}
             <button onClick={handleSumar}>+ 1</button>

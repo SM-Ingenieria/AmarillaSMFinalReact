@@ -38,7 +38,7 @@ function App() {
 
       <div
 
-        className="border border-5 border-primary m-3"
+        //className="border border-5 border-primary m-3"
 
       >
 

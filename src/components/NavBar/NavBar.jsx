@@ -37,20 +37,16 @@ export const NavBar = () => {
   const toggle = () => setIsOpen(!isOpen);
   
   return (
-    <div className="border border-5 border-primary m-3">
+    // <div className=" border-5 border-primary m-3">
+    <div>
       <Navbar>
 
         <Nav>
 
-          <Link className="BotonSm" to='/'>
+          <NavLink className="BotonSm" to='/'  >
             SM Ingenieria
-          </Link>
-
-          <NavItem>
-            <NavLink to="/">
-              Inicio
-            </NavLink>
-          </NavItem>
+          </NavLink>
+                   
           <NavItem>
             <NavLink to="/categoria/repuestos"className={({isActive})=>isActive ? 'btn btn-primary': 'btn btn-outline-primary'}>
               Repuestos
