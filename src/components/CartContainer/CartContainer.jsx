@@ -75,7 +75,7 @@ export const CartContainer = (children) => {
 
         {/* no puedo usar el triple igual por eso no me funciona el cartel de que no hay productos */}
       {/* { id.length != 0  } */}
-      { cartList.lenght != 0 ?
+      { cartList.length !== 0 ?
       <>
       
        {cartList.map(prod => (
@@ -84,7 +84,7 @@ export const CartContainer = (children) => {
           <img className="w-25" src={prod.foto} alt="imagen" />
           <label>Cantidad: {prod.cantidad} -</label>
           <label>Precio: {prod.precio} </label>
-          <button onClick={()=>eliminarItem(prod.id)}>  </button>
+          <button onClick={()=>eliminarItem(prod.id)}>X </button>
         </div>
       ))}
 
