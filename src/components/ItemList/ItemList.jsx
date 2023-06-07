@@ -7,6 +7,8 @@ import { memo } from "react"
 
 //memo -> memo(componente) -> (componente,fn Comparadora)
 
+console.log('estoy en archivo itemlist')
+
 
 const ItemList = memo ( ({productos})=> {
     // console.log('ItemList')    

@@ -161,11 +161,11 @@ const ItemListContainer = ({ greeting, children }) => {
     
         <button className="btn btn-success rounded-pill" onClick={handleMeGusta}>Me gusta</button>
         <button className="btn btn-success "onClick={handleAgregarProducto}>Agregar Producto</button>
-        {/* {children} */}
+        
         {isLoading ?
           //valida cuando esta trayendo los datos 
           <Loading/>
-          // <h2>Cargando...</h2>
+          
           :
           //cuando va a finally en punto * y cambia a false
           // en item ahora abajo:
@@ -180,3 +180,4 @@ const ItemListContainer = ({ greeting, children }) => {
 }
 
 export default ItemListContainer
+

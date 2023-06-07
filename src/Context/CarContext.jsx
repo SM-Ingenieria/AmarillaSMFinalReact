@@ -36,8 +36,9 @@ export const CartContextProvider = ({children}) => {
 
   const precioTotal =() => cartList.reduce((total,objProducto)=> total +=(objProducto.cantidad* objProducto.precio),0) //el reduce solo devuelve un valor
 
+  // ELIMINAR POR ITEM CORRECION 1
   const eliminarItem =(pid) => {
-    //no puedo usar el triple igual distinto
+    //no puedo usar el triple igual distinto --------------------------------------------------------------CORREGIR
     setCarlist(cartList.filter(prod => prod.id !== pid))
   } 
 

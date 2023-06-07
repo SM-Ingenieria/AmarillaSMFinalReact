@@ -39,6 +39,7 @@ export const CartContainer = (children) => {
         })
         setTimeout()
         vaciarCarrito()
+        setId('')
       })
 
       //para actualizar el firebase algun dato que necesite, primero apuntamos a un documento con doc
@@ -71,9 +72,10 @@ export const CartContainer = (children) => {
       console.log(dataForm)
   return (
     <div>
+
         {/* no puedo usar el triple igual por eso no me funciona el cartel de que no hay productos */}
       {/* { id.length != 0  } */}
-      { cartList.lenght !== 0 ?
+      { cartList.lenght != 0 ?
       <>
       
        {cartList.map(prod => (
